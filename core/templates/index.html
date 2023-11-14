@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block Start %}
+<!-- {% include 'preloader.html' %} -->
 
 <!-- hot thrills section -->
-
 <section id="hot-thrills">
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" style="background-color:black;">
             <div class="carousel-item video-slider" data-bs-interval="10000">
-                <video src="/static/media/The Dark Knight Rises - Official Teaser Trailer [HD].mp4" preload="auto" class="video" autoplay muted poster="/static/media/stranger-things-bicycle-tv-netflix-wallpaper-preview.jpg"></video>
+                <video src="/media/media/The Dark Knight Rises - Official Teaser Trailer [HD].mp4" preload="auto" class="video" autoplay muted poster="/static/media/stranger-things-bicycle-tv-netflix-wallpaper-preview.jpg"></video>
                 <div class="carousel-caption">
                     <div class="procont">
 
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class=" carousel-item" data-bs-interval="10000">
-                <video src="/static/media/extraction.mp4" class="video" autoplay loop muted poster="/static/media/extraction2.jpg" preload="auto"></video>
+                <video src="/media/media/extraction.mp4" class="video" autoplay loop muted poster="/static/media/extraction2.jpg" preload="auto"></video>
                 <div class="carousel-caption">
                     <div class="procont">
 
@@ -123,7 +123,7 @@
 
             </div>
             <div class="carousel-item active" data-bs-interval="10000">
-                <video src="/static/media/extraction.mp4" class="video" autoplay loop muted poster="/static/media/moneyheist.webp" preload="auto"></video>
+                <video src="/media/media/extraction.mp4" class="video" autoplay loop muted poster="/static/media/moneyheist.webp" preload="auto"></video>
 
                 <div class="carousel-caption">
                     <div class="procont">
@@ -225,8 +225,10 @@
     <section id="submain_section">
         <div class="latest-movies">
             <div class="movie-container" title="Loki full hd movie download ">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
+                <div class="sub-movie-container">
+                    <a href="{% url 'detail' %}">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
+                    </a>
                 </div>
                 <div class="sub-container-desc">
                     <div class="movie-desc-overlay">
@@ -241,7 +243,7 @@
                                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                     </svg>
                                 </button>
-                                <button onclick="window.location.href='movie.html'">
+                                <button onclick="window.location.href='/detail/'">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
                                 <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
                                 </svg>
@@ -307,285 +309,7 @@
 
 
             </div>
-            <div class="movie-container">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://vegamovies.zip/wp-content/uploads/2023/10/Fair-Play-2023-Hindi-Dubbed-200x300.jpg" alt="loki" />
-                </div>
-                <div class="sub-container-desc">
-                    <div class="movie-desc-overlay">
-                        <div class="overlay-trailler">
-                            <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                frameborder="0"></iframe>
-                        </div>
-                        <div class="overlay-description">
-                            <div class="overlay-trailler-moreinfo-btn">
-                                <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                            </button>
-                                <button onclick="window.location.href='movie.html'">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                                </svg>
-                            </button>
-                            </div>
-                            <div class="overlay-movie-info-short">
-                                <span>67% Match</span> <span>u/a 18+</span>
-                                <span>2h 23min</span>
 
-
-
-                            </div>
-                            <div class="overlay-movie-catagory">
-                                <span><a href="#">Action </a></span>
-                                <span><a href="#">Horror </a></span>
-                                <span><a href="#">Advanture</a></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-            <div class="movie-container">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://vegamovies.zip/wp-content/uploads/2023/09/Nowhere-2023-Hindi-Dubbed-200x300.jpg" alt="loki" />
-                </div>
-                <div class="sub-container-desc">
-                    <div class="movie-desc-overlay">
-                        <div class="overlay-trailler">
-                            <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                frameborder="0"></iframe>
-                        </div>
-                        <div class="overlay-description">
-                            <div class="overlay-trailler-moreinfo-btn">
-                                <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                            </button>
-                                <button onclick="window.location.href='movie.html'">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                                </svg>
-                            </button>
-                            </div>
-                            <div class="overlay-movie-info-short">
-                                <span>67% Match</span> <span>u/a 18+</span>
-                                <span>2h 23min</span>
-
-
-
-                            </div>
-                            <div class="overlay-movie-catagory">
-                                <span><a href="#">Action </a></span>
-                                <span><a href="#">Horror </a></span>
-                                <span><a href="#">Advanture</a></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-
-            <div class="movie-container">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQCIGf-WLMi6m16lR3y9zKnyu6OpBRr-4nlpmcgAQuXpPuVHc8O" alt="loki" />
-                </div>
-                <div class="sub-container-desc">
-                    <div class="movie-desc-overlay">
-                        <div class="overlay-trailler">
-                            <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                frameborder="0"></iframe>
-                        </div>
-                        <div class="overlay-description">
-                            <div class="overlay-trailler-moreinfo-btn">
-                                <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                            </button>
-                                <button onclick="window.location.href='movie.html'">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                                </svg>
-                            </button>
-                            </div>
-                            <div class="overlay-movie-info-short">
-                                <span>67% Match</span> <span>u/a 18+</span>
-                                <span>2h 23min</span>
-
-
-
-                            </div>
-                            <div class="overlay-movie-catagory">
-                                <span><a href="#">Action </a></span>
-                                <span><a href="#">Horror </a></span>
-                                <span><a href="#">Advanture</a></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-            <div class="movie-container">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://vegamovies.zip/wp-content/uploads/2023/09/Gen-V-2023-Hindi-Dubbed-200x300.jpg" alt="loki" />
-                </div>
-                <div class="sub-container-desc">
-                    <div class="movie-desc-overlay">
-                        <div class="overlay-trailler">
-                            <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                frameborder="0"></iframe>
-                        </div>
-                        <div class="overlay-description">
-                            <div class="overlay-trailler-moreinfo-btn">
-                                <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                            </button>
-                                <button onclick="window.location.href='movie.html'">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                                </svg>
-                            </button>
-                            </div>
-                            <div class="overlay-movie-info-short">
-                                <span>67% Match</span> <span>u/a 18+</span>
-                                <span>2h 23min</span>
-
-
-
-                            </div>
-                            <div class="overlay-movie-catagory">
-                                <span><a href="#">Action </a></span>
-                                <span><a href="#">Horror </a></span>
-                                <span><a href="#">Advanture</a></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-            <div class="movie-container">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://vegamovies.zip/wp-content/uploads/2023/10/Expend4bles-2203m-Hd-Poster-200x300.jpg" alt="loki" />
-                </div>
-                <div class="sub-container-desc">
-                    <div class="movie-desc-overlay">
-                        <div class="overlay-trailler">
-                            <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                frameborder="0"></iframe>
-                        </div>
-                        <div class="overlay-description">
-                            <div class="overlay-trailler-moreinfo-btn">
-                                <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                            </button>
-                                <button onclick="window.location.href='movie.html'">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                                </svg>
-                            </button>
-                            </div>
-                            <div class="overlay-movie-info-short">
-                                <span>67% Match</span> <span>u/a 18+</span>
-                                <span>2h 23min</span>
-
-
-
-                            </div>
-                            <div class="overlay-movie-catagory">
-                                <span><a href="#">Action </a></span>
-                                <span><a href="#">Horror </a></span>
-                                <span><a href="#">Advanture</a></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-            <div class="movie-container">
-                <div class="sub-movie-container" onclick="window.location.href='movie.html'">
-                    <img src="https://vegamovies.zip/wp-content/uploads/2023/10/The-Conference-2023-200x300.jpg" alt="loki" />
-                </div>
-                <div class="sub-container-desc">
-                    <div class="movie-desc-overlay">
-                        <div class="overlay-trailler">
-                            <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                frameborder="0"></iframe>
-                        </div>
-                        <div class="overlay-description">
-                            <div class="overlay-trailler-moreinfo-btn">
-                                <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                            </button>
-                                <button onclick="window.location.href='movie.html'">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                                </svg>
-                            </button>
-                                <h5>THE CONFERENCE
-                                </h5>
-                            </div>
-                            <div class="overlay-movie-info-short">
-                                <span>67% Match</span> <span>u/a 18+</span>
-                                <span>2h 23min</span>
-
-
-
-                            </div>
-                            <div class="overlay-movie-catagory">
-                                <span><a href="#">Action </a></span>
-                                <span><a href="#">Horror </a></span>
-                                <span><a href="#">Advanture</a></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
 
         </div>
         <div id="latest_movie_updates">
@@ -640,7 +364,7 @@
 <!--  movie poster ------------------------------------------------------------------  -->
 <section class="movie-poster">
     <div class="movie-poster-img">
-        <img src="/static/media/passificrim.jpg" alt="">
+        <img src="/media/media/passificrim.jpg" alt="">
 
     </div>
     <div class="movie-poster-banner">
@@ -990,12 +714,10 @@
 
 </section>
 
-
 <!--  movie poster ------------------------------------------------------------------  -->
-
 <section class="movie-poster">
     <div class="movie-poster-img">
-        <img src="/static/media/passificrim.jpg" alt="">
+        <img src="/media/media/passificrim.jpg" alt="">
 
     </div>
     <div class="movie-poster-banner">
