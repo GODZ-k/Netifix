@@ -2,5 +2,5 @@ from django.urls import path,include
 from .views import *
 
 urlpatterns = [
-    path("" , detail , name="detail")
+    path("<slug>" , detail , name="detail")
 ]
