@@ -973,6 +973,11 @@ align-items: flex-end; */
 
 /* movie-poster     */
 
+.sub-movie-poster {
+    background-color: #161616;
+    min-height: 20vh;
+}
+
 .movie-poster {
     height: 60vh;
     background-color: #161616;

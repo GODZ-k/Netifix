@@ -68,14 +68,37 @@ class hot_thrills(models.Model):
     class Meta:
         verbose_name_plural = 'Hot Slideshow'
 
-class poster(models.Model):
+class poster1(models.Model):
     movie_wallpaper=models.ImageField(upload_to="movie_media")
-    movies=models.ForeignKey(movie, related_name="poster_movies", on_delete=models.CASCADE)
+    movies=models.ForeignKey(movie, related_name="poster1_movies", on_delete=models.CASCADE)
 
 
     def __str__(self) -> str:
         return self.movies.name
 
     class Meta:
-        verbose_name_plural = 'Recommanded posters'
+        verbose_name_plural = 'Recommanded posters 1'
 
+
+class poster2(models.Model):
+    movie_wallpaper=models.ImageField(upload_to="movie_media")
+    movies=models.ForeignKey(movie, related_name="poster2_movies", on_delete=models.CASCADE)
+
+
+    def __str__(self) -> str:
+        return self.movies.name
+
+    class Meta:
+        verbose_name_plural = 'Recommanded posters 2'
+
+
+class poster3(models.Model):
+    movie_wallpaper=models.ImageField(upload_to="movie_media")
+    movies=models.ForeignKey(movie, related_name="poster3_movies", on_delete=models.CASCADE)
+
+
+    def __str__(self) -> str:
+        return self.movies.name
+
+    class Meta:
+        verbose_name_plural = 'Recommanded posters 3'

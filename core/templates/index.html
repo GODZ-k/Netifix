@@ -203,46 +203,54 @@
 </section>
 
 <!--  movie poster ------------------------------------------------------------------  -->
-<section class="movie-poster">
+
+<section class="sub-movie-poster">
+{% for items in recomanded1  %}
+<section style="padding: 16px;">
+<section class="movie-poster" >
     <div class="movie-poster-img">
-        <img src="/media/media/passificrim.jpg" alt="">
+        <img src="/media/{{items.movie_wallpaper}}" alt="{{items.movies.name}}">
 
     </div>
     <div class="movie-poster-banner">
         <div class="movie-poster-banner-img">
-            <img src="https://media-cache.cinematerial.com/p/500x/vhfousbg/pacific-rim-movie-poster.jpg?v=1478178883" alt="loki" />
+            <img src="{{items.movies.poster_portrait}}" alt="{{items.movies.name}}" />
 
         </div>
         <div class="movie-poster-banner-detail">
             <p class="movie-poster-banner-detail-img">
                 <img src="https://cdn.freebiesupply.com/images/large/2x/imdb-logo-transparent.png" alt="">
             </p>
-            <span>8.5</span>
+            <span>{{items.movies.imdb_rating}}</span>
             <p class="release-date">
-                2008
+                {{items.movies.movie_year}}
             </p>
             <h2>PACAFIC RIM</h2>
             <p class="movie-poster-banner-detail-para">
-                The government assumes the Jaegers, robotic war machines battling the Kaijus, to be ineffective. However, Stacker Pentecost's team believes that only the Jaegers can save the world from destruction.
-            </p>
+            {{items.movies.description}}
+             </p>
             <div class="info-trailler-btn movie-poster-banner-detail-btn">
-                <button class="watch-trailler watch-trailler-1" data-video-id="5guMumPFBag">
+                <button class="watch-trailler watch-trailler-1" data-video-id="{{items.movies.movie_trailler}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
                           </svg>
                           Watch Trailler
                     </button>
-                <!-- <button class="more-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                 <button onclick="window.location.href='/detail/{{items.movies.slug}}'" class="more-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                    </svg>More info</button> -->
+                    </svg>More info</button>
             </div>
         </div>
     </div>
 
 </section>
+</section>
+{% endfor %}
+</section>
 
 <!-- catagories shortcuts -----------------------------------------------------------  -->
+
 <section class="catagories-shortcuts">
     <main class="catagory">
         <h2 class="thumbTitle">Scifi</h2>
@@ -251,146 +259,16 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+
+                {% for items in scifi  %}
                 <div class="swiper-slide">
                     <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
+                        <img src="{{items.poster_portrait}}" alt="{{items.movies.name}}" />
                     </a>
                 </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7030/1607030-v-924e1d5a7914" alt="loki" />
-                    </a>
-                </div>
+                {% endfor %}
+
+
             </div>
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
@@ -554,45 +432,55 @@
     </main>
 
 </section>
+<h1>
 
+    {% for category in category  %}
+    <p style="color: black;">{{category.category}}</p>
+
+    {% endfor %}
+
+</h1>
 <!--  movie poster ------------------------------------------------------------------  -->
-<section class="movie-poster">
-    <div class="movie-poster-img">
-        <img src="/media/media/passificrim.jpg" alt="">
 
+<section class="sub-movie-poster">
+{% for items in recomanded2  %}
+<section style="padding: 16px;">
+<section class="movie-poster" >
+    <div class="movie-poster-img">
+        <img src="/media/{{items.movie_wallpaper}}" alt="{{items.movies.name}}">
     </div>
     <div class="movie-poster-banner">
         <div class="movie-poster-banner-img">
-            <img src="https://media-cache.cinematerial.com/p/500x/vhfousbg/pacific-rim-movie-poster.jpg?v=1478178883" alt="loki" />
-
+            <img src="{{items.movies.poster_portrait}}" alt="{{items.movies.name}}" />
         </div>
         <div class="movie-poster-banner-detail">
             <p class="movie-poster-banner-detail-img">
                 <img src="https://cdn.freebiesupply.com/images/large/2x/imdb-logo-transparent.png" alt="">
             </p>
-            <span>8.5</span>
+            <span>{{items.movies.imdb_rating}}</span>
             <p class="release-date">
-                2008
+                    {{items.movies.movie_year}}
             </p>
             <h2>PACAFIC RIM</h2>
-            <p class="movie-poster-banner-detail-para">
-                The government assumes the Jaegers, robotic war machines battling the Kaijus, to be ineffective. However, Stacker Pentecost's team believes that only the Jaegers can save the world from destruction.
+            <p class="movie-poster-banner-detail-para">{{items.movies.description}}
             </p>
             <div class="info-trailler-btn movie-poster-banner-detail-btn">
-                <button class="watch-trailler watch-trailler-1" data-video-id="5guMumPFBag">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
-                          </svg>
-                          Watch Trailler
-                    </button>
-                <!-- <button class="more-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                    </svg>More info</button> -->
+              <button class="watch-trailler watch-trailler-1" data-video-id="{{items.movies.movie_trailler}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                </svg>
+                  Watch Trailler
+              </button>
+              <button onclick="window.location.href='/detail/{{items.movies.slug}}'" class="more-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                </svg>More info
+              </button>
             </div>
         </div>
     </div>
-
 </section>
-
+</section>
+{% endfor %}
+</section>
 {% endblock%}
