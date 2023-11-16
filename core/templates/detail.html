@@ -33,9 +33,9 @@
     <div class="main-frame-movie-catagory">
 
         <div class="main-movie-catagory">
-            <button><a href="#">Action</a></button>
-            <button><a href="#">Scifi</a></button>
-            <button><a href="#">Thriller</a></button>
+            {% for category in items.category.all  %}
+            <button><a href="#">{{category.category}}</a></button>
+            {% endfor %}
         </div>
         <div class="main-movie-desc">
 <p>{{items.description}}</p>

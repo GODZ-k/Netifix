@@ -1015,7 +1015,7 @@ align-items: flex-end; */
 .movie-poster-banner-img {
     height: clamp(55px, 44vw, 228px);
     width: clamp(57px, 30vw, 155px);
-    border-radius: 18px;
+    border-radius: 1.2vw;
     overflow: hidden;
 }
 
