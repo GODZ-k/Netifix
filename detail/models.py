@@ -22,7 +22,7 @@ class movie(models.Model):
     movie_duration=models.CharField(max_length=20, help_text="Enter the movie duration Ex: 2h 34min")
     movie_year=models.IntegerField( help_text="Ex: 2024")
     movie_trailler=models.CharField(max_length=200 , help_text="Enter the youtube trailler video id Ex: aR_JzBGdGvM")
-    movie_match=models.CharField(max_length=100, help_text="Ex: 67% Match ,Enter only number")
+    movie_match=models.CharField(max_length=100, help_text="Ex: 67 ,Enter only number")
     movie_grade=models.CharField(max_length=200,help_text="Ex: U/A 18+")
     poster_portrait=models.URLField(max_length=900,help_text="Enter the movie poster URL Ex: http://...")
     director=models.CharField(max_length=200, help_text="Ex: Mark • David Hammer • Chris Green")
@@ -68,6 +68,9 @@ class hot_thrills(models.Model):
     label=models.CharField(max_length=200,null=True, blank=True)
     name_color=models.CharField(max_length=100 , default="grey")
     clip=models.FileField(upload_to="movie_media" )
+    text_image=models.URLField(max_length=200, null=True,blank=True,help_text="Image should be .png")
+    text=models.CharField(max_length=50,null=True,blank=True,help_text="If not text_image ( Optional )")
+    text_upload_image=models.ImageField(upload_to="movie_media" , null=True,blank=True,help_text="If not have text_image url ( Optional )")
 
     def __str__(self) -> str:
         return self.movies.name

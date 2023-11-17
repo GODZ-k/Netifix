@@ -15,7 +15,20 @@
                     <div class="procont">
                         <div class="movie-head">
                             <div class="moviedescription">
-                                <h1 style="color: {{items.name_color}};">{{items.movies.name}}</h1>
+
+
+                                {% if not items.text %}
+                                  {% if items.text_image %}
+                                    <img style="height: clamp(14px, 12vw, 150px);" src="{{ items.text_image }}" alt="{{ items.movies.name }}">
+                                  {% else%}
+                                    <img style="height: clamp(14px, 12vw, 150px);" src="/media/{{items.text_upload_image}}" alt="{{ items.movies.name }}">
+                                  {% endif %}
+                                {% else %}
+                                    <h1 style="color: {{ items.name_color }};">{{ items.text }}</h1>
+                                {% endif %}
+
+
+
                                 <p>{{items.movies.description}}</p>
                                 <div class="time-imdb-rating">
 
@@ -135,7 +148,7 @@
                                 <h5>{{items.name}}</h5>
                             </div>
                             <div class="overlay-movie-info-short">
-                                <span>{{items.movie_match}} Match</span> <span>{{items.movie_grade}}</span>
+                                <span>{{items.movie_match}}% Match</span> <span>{{items.movie_grade}}</span>
                                 <span>{{items.movie_duration}}</span>
                             </div>
                             <div class="overlay-movie-catagory">
