@@ -4,3 +4,4 @@ from .views import *
 urlpatterns = [
     path("<slug>" , detail , name="detail")
 ]
+

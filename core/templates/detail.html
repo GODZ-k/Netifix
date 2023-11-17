@@ -33,7 +33,7 @@
     <div class="main-frame-movie-catagory">
 
         <div class="main-movie-catagory">
-            {% for category in items.category.all  %}
+            {% for category in items.category.all|slice:"3"  %}
             <button><a href="#">{{category.category}}</a></button>
             {% endfor %}
         </div>

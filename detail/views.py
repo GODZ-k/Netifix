@@ -4,7 +4,6 @@ from .models import *
 # Create your views here.
 def detail(request,slug):
     items=movie.objects.get(slug=slug)
-    
     data={
         "items":items
     }

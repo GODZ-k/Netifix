@@ -32,7 +32,7 @@
                                 <div class="catogery">
                                     <ul>
 
-                                        {% for category in items.movies.category.all %}
+                                        {% for category in items.movies.category.all|slice:"3" %}
                                         <li>
                                             <a href="#">{{ category.category }}</a>
                                         </li>
@@ -140,7 +140,7 @@
                             </div>
                             <div class="overlay-movie-catagory">
 
-                               {% for category in items.category.all %}
+                               {% for category in items.category.all|slice:"3" %}
                                 <span><a href="#">{{category.category}} </a></span>
                                 {% endfor %}
 

@@ -1,6 +1,9 @@
 from django.db import models
 from autoslug import AutoSlugField
 # Create your models here.
+class Moviemanager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_delete=False)
 
 class Categories(models.Model):
     category=models.CharField(max_length=100)
@@ -39,6 +42,10 @@ class movie(models.Model):
     movie_title=models.CharField(max_length=300, help_text="Ex: Loki full hd movie download")
     released_at=models.DateField(null=True , blank=True ,help_text=" Ex: 23/09/2021")
     updated_at=models.DateTimeField(auto_now=True)
+    is_delete=models.BooleanField(default=False)
+
+    objects=Moviemanager()
+    admin_objects=models.Manager()
 
     def __str__(self) -> str:
         return self.name
@@ -58,7 +65,7 @@ class trending(models.Model):
 
 class hot_thrills(models.Model):
     movies=models.ForeignKey(movie, related_name="hot_thrills_movies", on_delete=models.CASCADE)
-    label=models.CharField(max_length=200)
+    label=models.CharField(max_length=200,null=True, blank=True)
     name_color=models.CharField(max_length=100 , default="grey")
     clip=models.FileField(upload_to="movie_media" )
 
