@@ -6,6 +6,7 @@ def home(request):
     item=movie.objects.all()
     hot_thrill=hot_thrills.objects.all()
     trend=trending.objects.all()
+    movie_tags=Tags.objects.all()
     recomanded1=poster1.objects.all()
     recomanded2=poster2.objects.all()
     recomanded3=poster3.objects.all()
@@ -36,6 +37,7 @@ def home(request):
         "Thriller":Thriller,
         "Mystery":Mystery,
         "Romance":Romance,
+        "movie_tags":movie_tags
 
     }
     return render(request, "index.html",data)
@@ -47,14 +49,14 @@ def About(request):
     return render(request,"About.html")
 
 def Netflix(request):
-    items=movie.objects.filter(category__category="Netflix")
+    items=movie.objects.filter(tags__name="Netflix")
     data={
         "items":items
     }
     return render(request,"Netflix.html",data)
 
 def disneyplus(request):
-    items=movie.objects.filter(category__category="Disneyplus")
+    items=movie.objects.filter(tags__name="Disneyplus")
     data={
         "items":items
     }
@@ -62,7 +64,7 @@ def disneyplus(request):
 
 
 def Amazonprime(request):
-    items=movie.objects.filter(category__category="Amazonprime")
+    items=movie.objects.filter(tags__name="Amazonprime")
     data={
         "items":items
     }

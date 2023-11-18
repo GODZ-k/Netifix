@@ -5,6 +5,14 @@ class Moviemanager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(is_delete=False)
 
+class Tags(models.Model):
+    name=models.CharField(max_length=200,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Tags'
 class Categories(models.Model):
     category=models.CharField(max_length=100)
 
@@ -16,6 +24,7 @@ class Categories(models.Model):
 
 class movie(models.Model):
     category=models.ManyToManyField(Categories,related_name="categories")
+    tags=models.ForeignKey(Tags,related_name="movie_tags",on_delete=models.CASCADE,null=True,blank=True)
     name=models.CharField(max_length=50, help_text="Enter the movie name")
     description=models.TextField(help_text="Enter the movie description")
     imdb_rating=models.FloatField( help_text="Enter the IMDb rating")
@@ -26,7 +35,6 @@ class movie(models.Model):
     movie_grade=models.CharField(max_length=200,help_text="Ex: U/A 18+")
     poster_portrait=models.URLField(max_length=900,help_text="Enter the movie poster URL Ex: http://...")
     director=models.CharField(max_length=200, help_text="Ex: Mark • David Hammer • Chris Green")
-    distibuted_by=models.CharField(max_length=200, help_text="Ex: Warner Bros. Entertainment • Marvel Studio")
     cast=models.CharField(max_length=200,help_text="Ex: Chris hamesworth • Scarllet johnson")
     language=models.CharField(max_length=200 , help_text="Ex: English • Hindi")
     subtitle=models.CharField(max_length=200,help_text="Ex: English • Hindi • Spanish")

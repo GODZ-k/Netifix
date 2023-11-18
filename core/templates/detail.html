@@ -18,9 +18,9 @@
         </div>
         <div class="movie-info">
             <div class="movie-catagory">
-                <button><a href="#">Action</a></button>
-                <button><a href="#">Scifi</a></button>
-                <button><a href="#">Thriller</a></button>
+                {% for category in items.category.all|slice:"3"  %}
+            <button><a href="#">{{category.category}}</a></button>
+            {% endfor %}
             </div>
             <div class="movie-info-detail">
                 <p>{{items.description}}</p>
@@ -57,7 +57,7 @@
             </li>
             <li><span>Distibuted by</span>
                 <ul>
-                    <li>{{items.distibuted_by}}</li>
+                    <li>{{items.tags.name}}</li>
                 </ul>
             </li>
             <li><span>Cast</span>

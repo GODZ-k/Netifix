@@ -6,13 +6,13 @@
             <ul id="navbar">
 
                 <li>
-                    <a class="active" href="/"> Home </a>
+                    <a class="{% if request.path == '/' %} active {% endif %}" href="/"> Home </a>
                 </li>
 
                 <!--  choose hoverable dropdown menu or clickable menu -->
                 <li class="menu-item">
                     <!-- <div class="dropdown"> -->
-                    <a href="#" class="hollywood-drop">
+                    <a href="#" class="hollywood-drop ">
                         Hollywood
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -59,7 +59,9 @@
 
 
                 </li>
-                <li class="menu-item">
+
+                <!-- Tv shows -->
+                {% comment %} <li class="menu-item">
                     <!-- <div class="dropdown"> -->
                     <a href="#">
                             TV Shows
@@ -101,15 +103,19 @@
                     </ul>
                     <!-- </div> -->
                     <!-- <a href="#"> TV Shows</a> -->
+                </li> {% endcomment %}
+                <!-- End Tv shows dropdown-->
+                <li>
+                    <a href="{% url 'netflix' %}" class="{% if request.path == '/HBO/ ' %} active {% endif %}"> HBO</a>
                 </li>
                 <li>
-                    <a href="{% url 'netflix' %}"> Netflix</a>
+                    <a href="{% url 'netflix' %}" class="{% if request.path == '/Netflix/ ' %} active {% endif %}"> Netflix</a>
                 </li>
                 <li>
-                    <a href="{% url 'disneyplus' %}"> Disney + </a>
+                    <a href="{% url 'disneyplus' %}" class="{% if request.path == '/Disney+/' %} active {% endif %}"> Disney + </a>
                 </li>
                 <li>
-                    <a href="{% url 'amazonprime' %}"> Amazon Prime</a>
+                    <a href="{% url 'amazonprime' %}" class="{% if request.path == '/Amazonprime/' %} active {% endif %}"> Amazon Prime</a>
 
                 </li>
 
