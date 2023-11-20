@@ -1,4 +1,4 @@
-from django.urls import path,include
+from django.urls import path
 from .views import *
 
 urlpatterns = [
@@ -8,5 +8,6 @@ urlpatterns = [
     path("Netflix/",Netflix,name="netflix"),
     path("Disney+/",disneyplus,name="disneyplus"),
     path("Amazonprime/",Amazonprime,name="amazonprime"),
+    path("Browse/",Browse ,name="Browse"),
 ]
 

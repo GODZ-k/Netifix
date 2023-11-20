@@ -9,107 +9,15 @@
                     <a class="{% if request.path == '/' %} active {% endif %}" href="/"> Home </a>
                 </li>
 
-                <!--  choose hoverable dropdown menu or clickable menu -->
-                <li class="menu-item">
-                    <!-- <div class="dropdown"> -->
-                    <a href="#" class="hollywood-drop ">
-                        Hollywood
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                          </svg>
-
-                        </a>
-                    <!-- <ul class="dropdown-menu" id="dropdownmenu"> -->
-                    <ul class="drop-menu">
-                        <li>
-                            <a>Action</a>
-                        </li>
-                        <li>
-                            <a>Advanture</a>
-                        </li>
-                        <li><a>Comedy</a></li>
-
-                        <li>
-                            <a>Fantasy</a>
-                        </li>
-
-                        <li>
-                            <a>History</a>
-                        </li>
-                        <li>
-                            <a>Horror</a>
-                        </li>
-                        <li>
-                            <a>Thriller</a>
-                        </li>
-                        <li>
-                            <a>Mystery</a>
-                        </li>
-                        <li>
-                            <a>Romance</a>
-                        </li>
-                        <li>
-                            <a>Scifi</a>
-                        </li>
-                        <li>
-                            <a>Sports</a>
-                        </li>
-                    </ul>
-                    <!-- <div> -->
-
-
+                <li>
+                    <a href="{% url 'Browse' %}" class="{% if request.path == '/Browse/' %} active {% endif %}"> Browse </a>
                 </li>
 
-                <!-- Tv shows -->
-                {% comment %} <li class="menu-item">
-                    <!-- <div class="dropdown"> -->
-                    <a href="#">
-                            TV Shows
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                              </svg>
-                        </a>
-                    <!-- <ul class="dropdown-menu" id="dropdownmenu"> -->
-                    <ul class="drop-menu">
-                        <li><a>Korian Drama (In Hindi)</a></li>
-                        <li>
-                            <a>Russian TV Series</a></li>
-                        <li><a>Turkish Drama (In Hindi)</a></li>
-                        <li>
-                            <a>Ukrainian TV Series (In Hindi)</a>
-                        </li>
-                        <li>
-                            <a>Chinese Drama (In Hindi)</a>
-                        </li>
-
-                        <li>
-                            <a>Japanese Drama (In hindi)</a>
-                        </li>
-                        <li>
-                            <a>Hindi Web Series (In hindi)</a>
-                        </li>
-                        <li>
-                            <a>Mexican TV Series (In hindi)</a>
-                        </li>
-                        <li>
-                            <a>French TV Series (In hindi)</a>
-                        </li>
-                        <li>
-                            <a>Colombian TV Series (In hindi)</a>
-                        </li>
-
-
-
-                    </ul>
-                    <!-- </div> -->
-                    <!-- <a href="#"> TV Shows</a> -->
-                </li> {% endcomment %}
-                <!-- End Tv shows dropdown-->
                 <li>
-                    <a href="{% url 'netflix' %}" class="{% if request.path == '/HBO/ ' %} active {% endif %}"> HBO</a>
+                    <a href="{% url 'netflix' %}" class="{% if request.path == '/HBO/' %} active {% endif %}"> HBO</a>
                 </li>
                 <li>
-                    <a href="{% url 'netflix' %}" class="{% if request.path == '/Netflix/ ' %} active {% endif %}"> Netflix</a>
+                    <a href="{% url 'netflix' %}" class="{% if request.path == '/Netflix/' %} active {% endif %}"> Netflix</a>
                 </li>
                 <li>
                     <a href="{% url 'disneyplus' %}" class="{% if request.path == '/Disney+/' %} active {% endif %}"> Disney + </a>

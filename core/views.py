@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from detail.models import *
+from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
     item=movie.objects.all()
+    paginatordata=Paginator(item,1)
+    page_no=request.GET.get("page")
+    finaldata=paginatordata.get_page(page_no)
+    lastpage=finaldata.paginator.num_pages
+    total_page_no=[n+1 for n in range(lastpage)]
     hot_thrill=hot_thrills.objects.all()
     trend=trending.objects.all()
     movie_tags=Tags.objects.all()
@@ -21,7 +27,11 @@ def home(request):
     Mystery=movie.objects.filter(category__category="Mystery")
     Romance=movie.objects.filter(category__category="Romance")
     data={
-        "items": item,
+        # pagination
+        "items": finaldata,
+        "lastpage":lastpage,
+        "total_page_no":total_page_no,
+        # hot thrills
         "slideshow": hot_thrill,
         "trend":trend,
         "recomanded1":recomanded1,
@@ -69,3 +79,6 @@ def Amazonprime(request):
         "items":items
     }
     return render(request,"Amazonprime.html",data)
+
+def Browse(request):
+    return render(request,"Browse.html")
