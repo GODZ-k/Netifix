@@ -111,25 +111,84 @@ def About(request):
 
 def Netflix(request):
     items=movie.objects.filter(tags__name="Netflix")
+    if request.method == 'GET':
+        search=request.GET.get('search','')
+        if search != '':
+            items=movie.objects.filter(name__icontains=search)
+
+    paginatordata=Paginator(items,1)
+    page_no=request.GET.get("page")
+    finaldata=paginatordata.get_page(page_no)
+    lastpage=finaldata.paginator.num_pages
+    total_page_no=[n+1 for n in range(lastpage)]
     data={
-        "items":items
+        "items": finaldata,
+        "lastpage":lastpage,
+        "total_page_no":total_page_no,
+        "search":search,
     }
     return render(request,"Netflix.html",data)
 
 def disneyplus(request):
-    items=movie.objects.filter(tags__name="Disneyplus")
+    items=movie.objects.filter(tags__name="Disney+")
+    if request.method == 'GET':
+        search=request.GET.get('search','')
+        if search != '':
+            items=movie.objects.filter(name__icontains=search)
+
+    paginatordata=Paginator(items,1)
+    page_no=request.GET.get("page")
+    finaldata=paginatordata.get_page(page_no)
+    lastpage=finaldata.paginator.num_pages
+    total_page_no=[n+1 for n in range(lastpage)]
     data={
-        "items":items
+        "items": finaldata,
+        "lastpage":lastpage,
+        "total_page_no":total_page_no,
+        "search":search,
     }
     return render(request,"disney+.html",data)
 
 
 def Amazonprime(request):
-    items=movie.objects.filter(tags__name="Amazonprime")
+    items=movie.objects.filter(tags__name="Prime")
+    if request.method == 'GET':
+        search=request.GET.get('search','')
+        if search != '':
+            items=movie.objects.filter(name__icontains=search)
+
+    paginatordata=Paginator(items,1)
+    page_no=request.GET.get("page")
+    finaldata=paginatordata.get_page(page_no)
+    lastpage=finaldata.paginator.num_pages
+    total_page_no=[n+1 for n in range(lastpage)]
     data={
-        "items":items
+        "items": finaldata,
+        "lastpage":lastpage,
+        "total_page_no":total_page_no,
+        "search":search,
     }
     return render(request,"Amazonprime.html",data)
 
 def Browse(request):
     return render(request,"Browse.html")
+
+def HBO(request):
+    items=movie.objects.filter(tags__name="HBO")
+    if request.method == 'GET':
+        search=request.GET.get('search','')
+        if search != '':
+            items=movie.objects.filter(name__icontains=search)
+
+    paginatordata=Paginator(items,1)
+    page_no=request.GET.get("page")
+    finaldata=paginatordata.get_page(page_no)
+    lastpage=finaldata.paginator.num_pages
+    total_page_no=[n+1 for n in range(lastpage)]
+    data={
+        "items": finaldata,
+        "lastpage":lastpage,
+        "total_page_no":total_page_no,
+        "search":search,
+    }
+    return render(request,"HBO.html",data)

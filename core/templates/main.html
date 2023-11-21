@@ -52,9 +52,14 @@
                 </div>
             </div>
             {% empty %}
-            <h5 style="color: white;">
-                No data found
-            </h5>
+            <p style="
+            color: #737373;
+            text-align: center;
+            display: block;
+            width: 100%;
+            font-size: clamp(11px,1vw,20px);
+            padding: 5px;
+            ">no data found</p>
             {% endfor %}
 
         </div>

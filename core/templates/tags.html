@@ -13,6 +13,15 @@
                         <img src="{{items.poster_portrait}}" alt="{{items.name}}" title="{{items.name}}" />
                     </a>
                 </div>
+                {% empty %}
+                <p style="
+                color: #737373;
+                text-align: center;
+                display: block;
+                width: 100%;
+                font-size: clamp(11px,1vw,20px);
+                padding: 5px;
+                ">no data found</p>
                 {% endfor %}
 
             </div>

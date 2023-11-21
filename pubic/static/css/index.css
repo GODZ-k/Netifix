@@ -763,8 +763,8 @@ font-size: 14px !important;
     background-color: rgb(34, 34, 34);
     /* height: clamp(55px, 45vw, 240px);
 width: clamp(57px, 30vw, 165px); */
-    height: clamp(55px, 37vw, 228px);
-    width: clamp(57px, 25vw, 155px);
+    height: clamp(55px, 39vw, 228px);
+    width: clamp(57px, 27vw, 155px);
 }
 
 .movie-container:hover {
@@ -951,7 +951,7 @@ align-items: flex-end; */
 
 .pagination-container {
     padding: 20px;
-    background-color: #161616;
+    background-color: transparent;
 }
 
 .pagination {
@@ -959,6 +959,7 @@ align-items: flex-end; */
     --bs-pagination-bg: #161616 !important;
     --bs-pagination-color: #cbcbcb !important;
     cursor: pointer !important;
+    --bs-pagination-font-size: clamp(12px, 1vw, 20px) !important;
     --bs-pagination-border-color: none !important;
     --bs-pagination-hover-color: #db0000 !important;
     --bs-pagination-hover-bg: #00000036 !important;

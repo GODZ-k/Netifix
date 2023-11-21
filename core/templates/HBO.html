@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block Start %}
-<section id="netflix-content">
+<section id="HBO-content">
     <div class="header-link">
-        <h2>Popular on Netflix</h2>
-        <img src="/media/media/netflix.png" alt="Netflix" border="0">
+        <h2>HBO</h2>
+        <img src="https://www.hbomax.com/img/hbo-max-h-w-l.svg" alt="HBO" border="0">
 
     </div>
     <div class="latest-movies">
@@ -68,6 +68,7 @@
             {% endfor %}
 
     </div>
+    <!-- Pagination  -->
     {% include 'pagination.html' %}
 </section>
 {% endblock Start %}
